@@ -70,12 +70,12 @@ function loadCart() {
         <button onclick="removeFromCart(${index})">Премахни</button>`;
         list.appendChild(li);
         sum += item.price;
-        summary += `${item.name} - ${item.price} лв.\n`;
+        summary += `${item.name} - ${item.price} лв.\\n`;
     });
 
     total.textContent = "Общо: " + sum.toFixed(2) + " лв.";
     if (cartInput) {
-        cartInput.value = summary + "\nОбщо: " + sum.toFixed(2) + " лв.";
+        cartInput.value = summary + "\\nОбщо: " + sum.toFixed(2) + " лв.";
     }
 }
 
