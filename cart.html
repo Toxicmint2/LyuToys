@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>LyuToys - Количка</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const cartList = document.getElementById("cart-items");
+            const cartInput = document.getElementById("cart-input");
+            const totalElement = document.getElementById("total");
+            cartList.innerHTML = "";
+            let total = 0;
+            let summary = "";
+            cart.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = `${item.name} - ${item.price} лв.`;
+                cartList.appendChild(li);
+                total += item.price;
+                summary += `${item.name} - ${item.price} лв.\n`;
+            });
+            totalElement.textContent = "Обща сума: " + total.toFixed(2) + " лв.";
+            cartInput.value = summary + "\nОбщо: " + total.toFixed(2) + " лв.";
+        }
+        window.onload = loadCart;
+    </script>
+</head>
+<body>
+    <header>
+        <h1>LyuToys</h1>
+        <nav>
+            <a href="index.html">Начало</a>
+            <a href="shop.html">Пазарувай</a>
+            <a href="about.html">За мен</a>
+            <a href="contact.html">Контакти</a>
+            <a href="cart.html">Количка</a>
+        </nav>
+    </header>
+
+    <section class="cart">
+        <h2>Количка</h2>
+        <ul id="cart-items"></ul>
+        <p id="total"></p>
+        <p><strong>Разплащането става чрез Еконт. Безплатна доставка не се предлага.</strong></p>
+
+        <h3>Завърши поръчката</h3>
+        <form action="mailto:lyubomirat@gmail.com" method="post" enctype="text/plain">
+            <input type="hidden" id="cart-input" name="Поръчани продукти">
+            <label>Име и фамилия:<br><input type="text" name="Име" required></label><br><br>
+            <label>Телефон:<br><input type="text" name="Телефон" required></label><br><br>
+            <label>Град:<br><input type="text" name="Град" required></label><br><br>
+            <label>Офис на Еконт:<br><input type="text" name="Офис Еконт" required></label><br><br>
+            <label>Коментар:<br><textarea name="Коментар" rows="4" cols="40"></textarea></label><br><br>
+            <input type="submit" value="Изпрати поръчката">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 LyuToys</p>
+    </footer>
+</body>
+</html>
