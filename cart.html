@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Количка - LyuToys</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadCart()">
+    <header>
+        <h1>LyuToys</h1>
+        <nav>
+            <a href="index.html">Начало</a>
+            <a href="shop.html">Пазарувай</a>
+            <a href="about.html">За мен</a>
+            <a href="contact.html">Контакти</a>
+            <a href="cart.html">Количка</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Твоята количка</h2>
+        <ul id="cart-items"></ul>
+        <p id="total">Общо: 0.00 лв.</p>
+
+        <h3>Завърши поръчката:</h3>
+        <form action="mailto:lyubomirat@gmail.com" method="post" enctype="text/plain">
+            <label>Име:<br><input type="text" name="Име" required></label><br><br>
+            <label>Град:<br><input type="text" name="Град" required></label><br><br>
+            <label>Офис на Еконт:<br><input type="text" name="Офис" required></label><br><br>
+            <label>Имейл:<br><input type="email" name="Имейл" required></label><br><br>
+            <input type="hidden" id="cart-input" name="Продукти">
+            <input type="submit" value="Завърши поръчката">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 LyuToys</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
