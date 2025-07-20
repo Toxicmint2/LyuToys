@@ -6,6 +6,7 @@ function registerUser() {
     const pass1 = document.getElementById("regPass1").value;
     const pass2 = document.getElementById("regPass2").value;
 
+    
     if (pass1 !== pass2) {
         alert("Паролите не съвпадат.");
         return;
