@@ -1,0 +1,6 @@
+
+body { font-family: Arial; background: #fffaf5; margin: 0; }
+header { background: #f9dede; text-align: center; padding: 20px; }
+nav a { margin: 0 10px; font-weight: bold; text-decoration: none; color: #b46464; }
+section { padding: 20px; max-width: 1000px; margin: auto; background: white; }
+.product { border: 1px solid #ccc; padding: 10px; margin: 10px; display: inline-block; }
