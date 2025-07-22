@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>Каталог | LyuToys</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery img { max-width: 200px; margin: 10px; }
+    .filter-note { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Начало</a>
+      <a href="shop.html" class="active">Каталог</a>
+      <a href="about.html">За мен</a>
+      <a href="contact.html">Контакти</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Каталог</h1>
+    <label for="category">Филтър по категория:</label>
+    <select id="category" onchange="filterCategory()">
+      <option value="available">Налични</option>
+      <option value="autumn">Есенна колекция</option>
+      <option value="christmas">Коледни играчки</option>
+    </select>
+    <p class="filter-note" id="note" style="display: none;">
+      Ако желаете да поръчате някой продукт моля отидете към секцията <a href="contact.html">"Контакти"</a>.
+    </p>
+    <div class="gallery" id="items">
+      <!-- Placeholder images -->
+      <div class="item autumn"><img src="images/autumn1.jpg"><p>примерна цена: 30 лв.</p></div>
+      <div class="item christmas"><img src="images/christmas1.jpg"><p>примерна цена: 35 лв.</p></div>
+      <div class="item available"><img src="images/available1.jpg"><p>примерна цена: 28 лв.</p></div>
+    </div>
+  </main>
+  <script>
+    function filterCategory() {
+      const cat = document.getElementById("category").value;
+      const items = document.querySelectorAll('.item');
+      const note = document.getElementById('note');
+      items.forEach(item => {
+        item.style.display = item.classList.contains(cat) ? 'inline-block' : 'none';
+      });
+      note.style.display = "block";
+    }
+  </script>
+</body>
+</html>
