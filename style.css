@@ -49,3 +49,68 @@ h1, h2 {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #fffaf5;
+}
+
+
+
+/* Галерията да се подрежда адаптивно */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.product {
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 0 10px #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  background: white;
+}
+
+/* Изображенията да не преливат */
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Навигация адаптивна */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+  background-color: #fff0e6;
+}
+
+/* Responsive заглавие */
+h1 {
+  text-align: center;
+  font-size: 1.8em;
+}
+
+
+
+@media (max-width: 600px) {
+  .product {
+    width: 90%;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}
